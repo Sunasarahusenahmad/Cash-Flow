@@ -42,7 +42,7 @@ CREATE TABLE `cf_auth_info` (
 --
 
 INSERT INTO `cf_auth_info` (`id`, `name`, `number`, `email`, `username`, `password`, `is_admin`) VALUES
-(1, 'Sahara Foundation', '1234567891', 'sahara@gmail.com', 'sahara', 'sahara', 1);
+(1, 'Sahara Foundation', '1234567891', 'sahara@gmail.com', 'sahara@123', 'sahara@12350', 1);
 
 -- --------------------------------------------------------
 

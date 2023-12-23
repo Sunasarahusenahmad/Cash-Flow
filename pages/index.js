@@ -271,34 +271,46 @@ export default function Home() {
           </a>
         </div>
         {/* Insights  */}
-        <ul className="insights">
-          <li>
-            <i className="bx bx-calendar-check"></i>
+        <ul className="insights grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+          {/* First li */}
+          <li className="bg-white rounded-md p-4">
+            <i className="bx bx-calendar-check text-4xl text-blue-500"></i>
             <span className="info">
-              <h3>Borrowed</h3>
-              <p>{totalBorrowAmount}</p>
+              <h3 className="text-xl font-semibold">Borrowed</h3>
+              <p className="text-gray-700">{totalBorrowAmount}</p>
             </span>
           </li>
-          <li>
-            <i className="bx bx-show-alt"></i>
-            <span className="info">
-              <h3>Deposited</h3>
-              <p>{totalBorrowDepositeAmount}</p>
-            </span>
-          </li>
-          <li>
-            <i className="bx bx-filter"></i>
-            <span className="info">
-              <h3>Borrowed Due</h3>
 
-              <p style={{ color: totalBorrowedDue < 0 ? "red" : "green" }}>
+          {/* Second li */}
+          <li className="bg-white rounded-md p-4">
+            <i className="bx bx-show-alt text-4xl text-green-500"></i>
+            <span className="info">
+              <h3 className="text-xl font-semibold">Deposited</h3>
+              <p className="text-gray-700">{totalBorrowDepositeAmount}</p>
+            </span>
+          </li>
+
+          {/* Third li */}
+          <li className="bg-white rounded-md p-4">
+            <i
+              className="bx bx-filter text-4xl"
+              style={{ color: totalBorrowedDue < 0 ? "red" : "green" }}
+            ></i>
+            <span className="info">
+              <h3 className="text-xl font-semibold">Borrowed Due</h3>
+              <p
+                className={`text-gray-700 ${
+                  totalBorrowedDue < 0 ? "text-red-500" : "text-green-500"
+                }`}
+              >
                 {totalBorrowedDue}
               </p>
             </span>
           </li>
+
           <div></div>
           {/* Funds */}
-          <li>
+          <li className="bg-white rounded-md p-4">
             <i
               className="bx bx-filter"
               onClick={() => setIsFilterVisibleFunds(!isFilterVisibleFunds)}
@@ -309,14 +321,14 @@ export default function Home() {
             </span>
           </li>
 
-          <li>
+          <li className="bg-white rounded-md p-4">
             <i className="bx bx-dollar-circle"></i>
             <span className="info">
               <h3>Returned</h3>
               <p>{totalReturnAmount}</p>
             </span>
           </li>
-          <li>
+          <li className="bg-white rounded-md p-4">
             <i className="bx bx-dollar-circle"></i>
             <span className="info">
               <h3>Payable Refund</h3>

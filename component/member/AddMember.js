@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import ReactDOM from "react-dom";
 import ToastifyAlert from "../CustomComponent/ToastifyAlert";
 import CofirmAfterAdd from "../CustomComponent/CofirmAfterAdd";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 
 const AddMember = () => {
   // Globel State Manegment
@@ -182,6 +182,7 @@ const AddMember = () => {
               );
             }}
             onback={async () => {
+              dispatch(addMemberAsync({ ...memberData, username }));
               route.push(`/memberlist`);
             }}
             onClose={() => {
